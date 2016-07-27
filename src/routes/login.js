@@ -1,6 +1,6 @@
 'use strict'
 
-const request = require('request');
+const requestmodule = require('request');
 const qs = require('querystring');
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
       redirect_uri: 'http://localhost:3000/callback/',
       scope: process.env.SCOPES,
     });
-    console.log(query);
+
     reply.redirect(`https://accounts.spotify.com/authorize?${query}`);
-  }
+  },
 };
