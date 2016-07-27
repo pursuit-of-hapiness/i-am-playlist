@@ -30,6 +30,7 @@
   "dependencies": {
     "bcrypt": "^0.8.7",
     "env2": "^2.1.0",
+    "fakeredis": "^1.0.3",
     "hapi": "^13.5.0",
     "inert": "^4.0.1",
     "querystring": "^0.2.0",
