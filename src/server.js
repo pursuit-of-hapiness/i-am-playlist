@@ -26,4 +26,3 @@ server.register([require('inert'), require('vision')], (regErr) => {
 });
 
 module.exports = server;
-

@@ -1,12 +1,12 @@
 'use strict'
 
-const request = require('request');
+const requestmodule = require('request');
 const qs = require('querystring');
 
 module.exports = {
-  method: 'GET',
-  path: '/welcome',
+  method: ['GET', 'POST'],
+  path: '/callback/',
   handler: (request, reply) => {
-    reply.file('../../public/welcome.html');
+    return reply('<h1>IT WORKED</h1>');
   }
 };
