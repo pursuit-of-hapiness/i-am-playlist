@@ -18,12 +18,21 @@
   "homepage": "https://github.com/pursuit-of-hapiness/i-am-playlist#readme",
   "devDependencies": {
     "devtools": "0.0.0",
+    "eslint": "^3.1.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^5.2.2",
     "tape": "^4.6.0"
   },
   "dependencies": {
+    "bcrypt": "^0.8.7",
+    "env2": "^2.1.0",
     "hapi": "^13.5.0",
+    "inert": "^4.0.1",
     "querystring": "^0.2.0",
     "redis": "^2.6.2",
-    "request": "^2.74.0"
+    "request": "^2.74.0",
+    "vision": "^4.1.0"
   }
 }
