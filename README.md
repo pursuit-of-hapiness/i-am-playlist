@@ -23,7 +23,7 @@ Accept-Encoding: gzip, deflate, compress
 Authorization: Bearer {Access Token Here}
 ```
 
-### Response
+#### Response
 
 JSON object return is an array of playlist objects. This is what the 'discover weekly' object for the user mcelearr (me) looks like for this week: 
 
@@ -84,7 +84,7 @@ Accept-Encoding: gzip, deflate, compress
 Authorization: Bearer {Access Token Here}
 ```
 
-### Response
+#### Response
 What comes back is track objects in an array called items. Here is the first track object that came back from the object request:
 
 ```javascript
@@ -157,3 +157,51 @@ What comes back is track objects in an array called items. Here is the first tra
     }
   }
   ```
+  
+### Create a Playlist
+
+|Create a Playlist||
+|---|---|
+|Request Parameters:|user_id |
+|Endpoint:|https://api.spotify.com/v1/users/{user_id}/playlists |
+|Method: |POST |
+|Body: |name of playlist and public? boolean |
+|OAuth Scope: |playlist-modify-private, playlist-modify-public  |
+|Link to docs for this endpoint|https://developer.spotify.com/web-api/create-playlist/|
+
+#### Request
+
+```
+POST /v1/users/mcelearr/playlists HTTP/1.1
+Host: api.spotify.com
+Content-Length: 44
+Accept-Encoding: gzip, deflate, compress
+Accept: application/json
+User-Agent: Spotify API Console v0.1
+Content-Type: application/json
+Authorization: Bearer {Access Token Here}
+```
+
+### Add Tracks to a Playlist
+
+|Add Tracks to a Playlist||
+|---|---|
+|Request Parameters:|user_id, playlist_id |
+|Endpoint:|https://api.spotify.com/v1/users/{user_id}/playlists/{playlist_id}/tracks |
+|Method: |POST |
+|Body: |array of Spotify URI strings |
+|OAuth Scope: |playlist-modify-private, playlist-modify-public  |
+|Link to docs for this endpoint|https://developer.spotify.com/web-api/add-tracks-to-playlist/|
+
+#### Request
+
+```
+POST /v1/users/mcelearr/playlists/3DHC7FZ9w9y5zoOmIpavwv/tracks?uris=spotify%3Atrack%3A0AoBVHrn422YM52l4TAS0P HTTP/1.1
+Host: api.spotify.com
+Content-Length: 0
+Accept-Encoding: gzip, deflate, compress
+Accept: application/json
+User-Agent: Spotify API Console v0.1
+Content-Type: application/json
+Authorization: Bearer {Access Token Here}
+```
