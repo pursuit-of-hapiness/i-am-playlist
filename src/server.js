@@ -5,7 +5,9 @@ require('env2')('config.env');
 const hapi = require('hapi');
 
 const routes = [
-  'index'
+  'index',
+  'login',
+  'welcome',
 ];
 
 const routesArray = routes.map((el) => require(`./routes/${el}`));
