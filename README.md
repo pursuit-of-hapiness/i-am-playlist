@@ -1,5 +1,17 @@
 # i-am-playlist
 
+## Workflow
+
+* User login with spotify to get access token
+* GET list of user's playlists
+* Look for a playlist with owner ID 'spotifydiscover' - take its playlist_id
+* Look for a playlist with name 'My Discover Weekly Picks' - take its playlist_id
+* GET the list of tracks using the spotifydiscover-playlist_id
+* Strip the 'spotify track URIs' off the track objects and turn into an comma-separated string
+* Did the user have a playlist called 'My Discover Weekly Picks'?
+* If yes, POST create a playlist with name 'My Discover Weekly Picks'
+* Use the 'spotify track URIs' string to add these songs to the playlist called 'My Discover Weekly Picks'
+
 ## Endpoint docs
 
 ### Get a List of a User's Playlists
