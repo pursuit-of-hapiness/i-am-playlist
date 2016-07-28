@@ -1,6 +1,8 @@
 const trackRows = document.getElementsByClassName('track');
 
 const addTrackToPlaylist = function() {
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', )
   console.log(this.id);
 };
 
