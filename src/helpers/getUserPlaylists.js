@@ -14,7 +14,7 @@ module.exports = (getDiscoverWeeklyCB) => {
     };
     const token = response.request.token;
     token.user_id = user;
-    setAccessToken(client, token, (dbErr) => {
+    setAccessToken(client, token, (dbErr, dbReply) => {
       if (dbErr) throw dbErr;
       client.quit();
       request.get(`https://api.spotify.com/v1/users/${user}/playlists`, options, getDiscoverWeeklyCB);

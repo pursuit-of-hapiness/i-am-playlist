@@ -10,6 +10,7 @@ const routes = [
   'login',
   'welcome',
   'myPlaylist',
+  'submitPlaylist',
 ];
 
 const routesArray = routes.map((el) => require(`./routes/${el}`));
