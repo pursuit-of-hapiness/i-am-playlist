@@ -16,7 +16,7 @@ module.exports = {
         getUserPlaylists(
           getDiscoverWeekly(
             (err, response, body) => {
-              const username = response.request.username;
+              const username = `${response.request.username}Tracks`;
               const client = redis.createClient();
               client.set(username, body);
               client.expire(username, 10);
