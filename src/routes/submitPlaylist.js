@@ -6,8 +6,9 @@ const checkAccessToken = require('../helpers/checkAccessToken');
 
 module.exports = {
   path: '/submitPlaylist',
-  method: 'GET',
+  method: 'POST',
   handler: (request, reply) => {
+    //request.payload is the track id
     const client = redis.createClient();
     //const user = request.query.user;
     const user = 'matthewiiv';
