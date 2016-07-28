@@ -3,11 +3,13 @@
 require('env2')('config.env');
 
 const hapi = require('hapi');
+const Handlebars = require('handlebars');
 
 const routes = [
   'index',
   'login',
   'welcome',
+  'myPlaylist',
 ];
 
 const routesArray = routes.map((el) => require(`./routes/${el}`));
@@ -23,6 +25,16 @@ server.start((startErr) => {
 server.register([require('inert'), require('vision')], (regErr) => {
   if (regErr) throw regErr;
   server.route(routesArray);
+
+  server.views({
+    engines: {html: Handlebars},
+    relativeTo: __dirname,
+    path: './views',
+    layout: 'default',
+    layoutPath: './views/layout',
+    partialsPath: './views/partials',
+    helpersPath: './views/helpers',
+  });
 });
 
 module.exports = server;
