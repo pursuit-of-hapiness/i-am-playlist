@@ -1,0 +1,47 @@
+@import 'variables';
+@import 'grid';
+@import 'box';
+body {
+  background-color: $color3;
+  font-family: 'Raleway', sans-serif;
+  color: $color1;
+}
+
+.header-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  width: 960px;
+  height: 150px;
+  background-image: url('../b05cfd1cd103f205443bd69efd3e13b6.jpg');
+  font-family: 'Pacifico', cursive;
+  color: $color1;
+}
+.header-text{
+  background-color: $color4;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  font-size: 20px
+}
+
+.login-container{
+  text-align: center;
+}
+
+.info{
+ .col-2{
+   background-color: $color4;
+   padding: 5px;
+   font-weight: bold;
+ }
+}
+.track{
+  margin-top: 10px;
+  background-color: $color4;
+  opacity: 0.8;
+}
