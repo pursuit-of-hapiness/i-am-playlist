@@ -3,10 +3,10 @@
 const request = require('request');
 const setAccessToken = require('../database/setAccessToken');
 const redis = require('redis');
-const client = redis.createClient();
 
 module.exports = (getDiscoverWeeklyCB) => {
   return (err, response, body) => {
+    const client = redis.createClient();
     const header = response.request.headers;
     const user = JSON.parse(body).id;
     const options = {
