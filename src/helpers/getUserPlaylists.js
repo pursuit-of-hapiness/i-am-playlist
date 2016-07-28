@@ -2,10 +2,10 @@
 
 const request = require('request');
 const getDiscoverWeekly = require('./getDiscoverWeekly');
+
 module.exports = (req, reply) => {
   return (err, response, body) => {
-    const header = response
-    console.log(header);
+    const header = response.request.headers;
     const user = JSON.parse(body).id;
     const options = {
       headers: header,
