@@ -1,25 +1,19 @@
+'use strict'
 
 const request = require('request');
 
 module.exports = (req, reply) => {
   return (err, response, body) => {
-    const headerObj = Object.assign({}, response);
-    const headers = headerObj.request.headers;
-    const playlist = JSON.parse(body).items;
-// to be refactored...
-    const result = [];
-    playlist.forEach((e) => {
-      if (e.uri.includes('spotifydiscover')) {
-        result.push(e).uri;
-      }
-    });
-    const playlistId = result[0].id;
-    const spotifyUserId = 'spotifydiscover'
+    const user = 'spotifydiscover';
+    const header = response.request.headers;
+    const playlists = JSON.parse(body).items;
+    const spotifyWeekly = playlists.filter((el) => {
+      return el.owner.id === user;
+    })[0];
+    const playlistId = spotifyWeekly.id;
     const options = {
-      headers: headers,
+      headers: header,
     };
-    request.get(`https://api.spotify.com/v1/users/${spotifyUserId}/playlists/${playlistId}/tracks`, options, (er, res, bodyB) => {
-      return reply(`<p>${bodyB}</p>`);
-    });
+    request.get(`https://api.spotify.com/v1/users/${user}/playlists/${playlistId}/tracks`, options, (er, re, bo) => {console.log(bo)});
   };
 };
