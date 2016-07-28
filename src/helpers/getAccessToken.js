@@ -3,7 +3,7 @@
 const request = require('request');
 const getUserInfo = require('./getUserInfo');
 
-module.exports = (req, reply) => {
+module.exports = (req, getUserInfoCB) => {
   return () => {
     const data = {
       grant_type: 'authorization_code',
@@ -13,8 +13,6 @@ module.exports = (req, reply) => {
       client_secret: process.env.SPOTIFY_CLIENT_SECRET,
     };
 
-    request.post('https://accounts.spotify.com/api/token', { form: data }, getUserInfo(req, reply));
+    request.post('https://accounts.spotify.com/api/token', { form: data }, getUserInfoCB);
   };
 };
-
-
