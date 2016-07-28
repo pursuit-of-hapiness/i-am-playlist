@@ -7,6 +7,8 @@ module.exports = (client, userId, callback) => {
   });
   client.hgetall(userId, (err, reply) => {
     client.quit();
-    callback(err, reply);
+    const updatedReply = reply;
+    updatedReply.user_id = userId;
+    callback(err, updatedReply);
   });
 };

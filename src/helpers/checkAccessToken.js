@@ -7,10 +7,12 @@ module.exports = (callback) => {
     const tokenObject = reply;
     if (Date.now() - reply.date_created > 3600) {
       getNewAccessToken(
-        tokenObject, handleNewToken
+        tokenObject, handleNewToken(
+          tokenObject, callback
+        )
       );
     } else {
-      callback(reply);
+      callback(err, reply);
     }
   };
 };
