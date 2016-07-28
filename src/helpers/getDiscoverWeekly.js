@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const request = require('request');
 
@@ -14,6 +14,6 @@ module.exports = (req, reply) => {
     const options = {
       headers: header,
     };
-    request.get(`https://api.spotify.com/v1/users/${user}/playlists/${playlistId}/tracks`, options, (er, re, bo) => {console.log(bo)})
+    request.get(`https://api.spotify.com/v1/users/${user}/playlists/${playlistId}/tracks`, options, (er, re, bo) => {console.log(bo)});
   };
 };
