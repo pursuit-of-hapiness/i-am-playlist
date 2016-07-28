@@ -28,6 +28,7 @@
     "tape": "^4.6.0"
   },
   "dependencies": {
+    "atom": "^1.0.0",
     "bcrypt": "^0.8.7",
     "env2": "^2.1.0",
     "fakeredis": "^1.0.3",
@@ -36,6 +37,7 @@
     "querystring": "^0.2.0",
     "redis": "^2.6.2",
     "request": "^2.74.0",
+    "spotify-web-api-node": "^2.3.5",
     "vision": "^4.1.0"
   }
 }
