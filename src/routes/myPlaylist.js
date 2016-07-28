@@ -14,7 +14,7 @@ module.exports = {
       const tracks = trackObjectHelper(JSON.parse(response).items);
       console.log(tracks);
       client.quit();
-      reply.view('home', {tracks});
+      reply.view('home2', {tracks});
     });
   }
 };
