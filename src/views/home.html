@@ -1,9 +1,23 @@
-<h1>Hello home</h1>
-
-{{#each tracks}}
-
-<h1>{{{trackName}}}</h1>
-<h3>{{{albumName}}}</h3>
-<p>{{{artistNames}}}</p>
-
-{{/each}}
+<div class="header-container">
+  <div class="header-text">
+      <h1>Your discover weekly</h1>
+  </div>
+</div>
+<div class="grid-container">
+  <div class="info">
+    <div class="row">
+      <div class="col-2"><span>Track</span></div>
+      <div class="col-2"><span>Album</span></div>
+      <div class="col-2"><span>Artist</span></div>
+    </div>
+  </div>
+  {{#each tracks}}
+  <div class="track">
+    <div class="row">
+      <div class="col-2"><span>{{{trackName}}}</span></div>
+      <div class="col-2"><span>{{{albumName}}}</span></div>
+      <div class="col-2"><span>{{{artistNames}}}</span></div>
+    </div>
+  </div>
+  {{/each}}
+</div>
