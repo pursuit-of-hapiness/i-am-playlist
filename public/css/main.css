@@ -75,6 +75,9 @@ body {
   width: 500px;
   font-size: 20px; }
 
+.login-container {
+  text-align: center; }
+
 .info .col-2 {
   background-color: #CBD0B9;
   padding: 5px;
