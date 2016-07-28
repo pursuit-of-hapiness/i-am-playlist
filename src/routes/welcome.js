@@ -2,9 +2,10 @@
 
 const getAccessToken = require('../helpers/getAccessToken');
 
-const getUserInfo = require('../helpers/getUserInfo')
-const getUserPlaylists = require('../helpers/getUserPlaylists')
-const getDiscoverWeekly = require('../helpers/getDiscoverWeekly')
+const getUserInfo = require('../helpers/getUserInfo');
+const getUserPlaylists = require('../helpers/getUserPlaylists');
+const getDiscoverWeekly = require('../helpers/getDiscoverWeekly');
+const redis = require('redis');
 
 module.exports = {
   method: 'GET',
@@ -15,8 +16,12 @@ module.exports = {
         getUserPlaylists(
           getDiscoverWeekly(
             (err, response, body) => {
-              //console.log(body);
-              return reply('<h1>WOOOOOOO</h1>');
+              const username = response.request.username;
+              const client = redis.createClient();
+              client.set(username, body);
+              client.expire(username, 10);
+              client.quit();
+              return reply().redirect(`/myPlaylist?user=${username}`);
             }
           )
         )
