@@ -2,7 +2,7 @@
 
 const request = require('request');
 
-module.exports = (req, reply) => {
+module.exports = (callback) => {
   return (err, response, body) => {
     const user = 'spotifydiscover';
     const header = response.request.headers;
@@ -14,6 +14,6 @@ module.exports = (req, reply) => {
     const options = {
       headers: header,
     };
-    request.get(`https://api.spotify.com/v1/users/${user}/playlists/${playlistId}/tracks`, options, (er, re, bo) => {console.log(bo)});
+    request.get(`https://api.spotify.com/v1/users/${user}/playlists/${playlistId}/tracks`, options, callback);
   };
 };
