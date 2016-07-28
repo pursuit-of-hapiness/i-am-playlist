@@ -2,6 +2,7 @@
 
 const trackObjectHelper = require('../helpers/trackObjectHandler');
 const redis = require('redis');
+const jwt = require('../auth/jwt');
 
 module.exports = {
   path: '/myPlaylist',
@@ -12,9 +13,11 @@ module.exports = {
     client.get(user, (err, response) => {
       if (err) throw err;
       const tracks = trackObjectHelper(JSON.parse(response).items);
-      console.log(tracks);
       client.quit();
-      reply.view('home', {myVar: tracks});
+      const header = { typ: 'JWT', alg: 'HS256' };
+      const payload = { iat: Date.now(), iss: 'spotifyServer', username: user };
+      const token = jwt.create(header, payload, process.env.JWT_SECRET);
+      reply.view('home', {myVar: tracks}).state('session', token);
     });
   }
 };

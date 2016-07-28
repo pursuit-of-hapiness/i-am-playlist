@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 require('env2')('config.env');
 
@@ -17,6 +17,11 @@ const routesArray = routes.map((el) => require(`./routes/${el}`));
 const server = new hapi.Server();
 
 server.connection({ port: 3000 });
+
+server.state('session', {
+  path: '/',
+  encoding: 'none',
+});
 
 server.start((startErr) => {
   if (startErr) throw startErr;
