@@ -30,6 +30,7 @@
   "dependencies": {
     "atom": "^1.0.0",
     "bcrypt": "^0.8.7",
+    "crypto": "0.0.3",
     "env2": "^2.1.0",
     "fakeredis": "^1.0.3",
     "handlebars": "^4.0.5",
