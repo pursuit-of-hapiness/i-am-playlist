@@ -2,10 +2,10 @@
   "name": "i-am-playlist",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "testserver": "nodemon tests/serverTest.js",
-    "start": "nodemon src/server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
