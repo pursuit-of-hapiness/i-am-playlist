@@ -10,6 +10,7 @@ module.exports = (trackArray) => {
     object.track.artists.forEach(artist => {
       filteredTrackArray[i].artistNames.push(artist.name);
     });
+    filteredTrackArray[i].artistNames = filteredTrackArray[i].artistNames.join(', ')
     filteredTrackArray[i].trackId = object.track.id;
   });
   return filteredTrackArray;

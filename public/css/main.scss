@@ -1,0 +1,50 @@
+@import 'variables';
+@import 'grid';
+@import 'box';
+
+body {
+  background-color: $color3;
+  font-family: 'Raleway', sans-serif;
+  color: $color1;
+}
+.letter {
+  -ms-transform: rotate(20deg); /* IE 9 */
+  -webkit-transform: rotate(20deg); /* Safari */
+  transform: rotate(20deg);
+  font-size: 60px;
+  letter-spacing: 20px;
+  font-family: 'Montserrat', cursive;
+}
+.palm-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 230px;
+  background-image: url('../b05cfd1cd103f205443bd69efd3e13b6.jpg');
+  color: $color1;
+}
+.palm-text {
+  background-color: white;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.login-container{
+  h1{
+    font-size: 30px;
+  }
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+}
+#login-button{
+  background-color: $color1;
+}

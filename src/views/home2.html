@@ -1,0 +1,27 @@
+<div class="palm-header">
+  <div class="palm-text">
+    <div class="letter">D</div><div class="letter">I</div><div class="letter">S</div><div class="letter">C</div><div class="letter">O</div><div class="letter">V</div><div class="letter">E</div><div class="letter">R</div>
+  </div>
+</div>
+<br>
+<br>
+<table class="highlight">
+  <thead>
+    <tr>
+        <th data-field="icon"></th>
+        <th data-field="id">Track</th>
+        <th data-field="name">Album</th>
+        <th data-field="price">Artist</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each tracks}}
+    <tr class="track" id={{{trackId}}}>
+      <td class="small material-icons">album</td>
+      <td>{{{trackName}}}</td>
+      <td>{{{albumName}}}</td>
+      <td>{{{artistNames}}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

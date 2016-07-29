@@ -1,6 +1,8 @@
-# This is awful
+# i am playlist - My Discover Weekly
 
-# i-am-playlist
+## Discover Weekly
+
+Discover Weekly is a playlist published to every user by Spotify that analyses your listening patterns to serve up content that they think you might like. The playlist gets refreshed every week so if you haven't saved the songs you are interested in into a new playlist, then you will lose them forever. My Discover Weekly logs you into your Spotify account, shows you your Discover Weekly recommendations and lets you easily save them into a new playlist which will appear in your account.
 
 ## Workflow
 

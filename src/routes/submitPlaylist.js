@@ -11,7 +11,7 @@ const addToPlaylist = require('../helpers/addToPlaylist');
 
 module.exports = {
   path: '/submitPlaylist',
-  method: 'GET',
+  method: 'POST',
   handler: (request, reply) => {
     const token = request.state.session;
     const validJWT = jwt.verify(token, process.env.JWT_SECRET);

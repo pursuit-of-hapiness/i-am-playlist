@@ -17,7 +17,7 @@ module.exports = {
       const header = { typ: 'JWT', alg: 'HS256' };
       const payload = { iat: Date.now(), iss: 'spotifyServer', username: user };
       const token = jwt.create(header, payload, process.env.JWT_SECRET);
-      reply.view('home', {myVar: tracks}).state('session', token);
+      reply.view('home2', {tracks}).state('session', token);
     });
   }
 };
