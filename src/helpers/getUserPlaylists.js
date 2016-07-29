@@ -17,7 +17,7 @@ module.exports = (getDiscoverWeeklyCB) => {
     setAccessToken(client, token, (dbErr, dbReply) => {
       if (dbErr) throw dbErr;
       client.quit();
-      request.get(`https://api.spotify.com/v1/users/${user}/playlists`, options, getDiscoverWeeklyCB);
+      request.get(`https://api.spotify.com/v1/users/${user}/playlists?limit=50`, options, getDiscoverWeeklyCB);
     });
   };
 };
