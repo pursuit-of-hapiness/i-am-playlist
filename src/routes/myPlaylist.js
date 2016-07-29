@@ -8,9 +8,10 @@ module.exports = {
   path: '/myPlaylist',
   method: 'GET',
   handler: (request, reply) => {
-    const user = request.query.user;
+    const userTracks = request.query.user;
+    const user = userTracks.slice(0, userTracks.length - 6);
     const client = redis.createClient();
-    client.get(user, (err, response) => {
+    client.get(userTracks, (err, response) => {
       if (err) throw err;
       const tracks = trackObjectHelper(JSON.parse(response).items);
       client.quit();
