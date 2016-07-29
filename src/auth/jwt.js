@@ -1,6 +1,7 @@
 'use strict';
 
 const crypto = require('crypto');
+
 module.exports = {
   create: (header, payload, secret) => {
     const head = new Buffer(JSON.stringify(header)).toString('base64');
@@ -20,4 +21,9 @@ module.exports = {
     key = signature.digest('base64');
     return key === parts[2] ? true : false;
   },
+  extractPayload: (jwt, secret) => {
+    const parts = jwt.split('.');
+    const payload = new Buffer(JSON.stringify(parts[1]), 'base64').toString('ascii');
+    return payload;
+  }
 };

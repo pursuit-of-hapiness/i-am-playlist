@@ -12,4 +12,6 @@ tape('test create', (t) => {
   console.log(token);
   const valid = jwt.verify(token, testSecret);
   console.log(valid);
+  const payl = jwt.extractPayload(token, testSecret);
+  console.log(payl);
 });
