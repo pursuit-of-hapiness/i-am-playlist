@@ -2,8 +2,9 @@ const trackRows = document.getElementsByClassName('track');
 
 
 const addTrackToPlaylist = function() {
+  this.style.backgroundColor = '#DBEBC0'; 
   this.childNodes[1].className = 'track-clicked';
-  this.childNodes[3].className = 'fadeIn';
+  this.childNodes[3].className = 'toggle';
 
   const xhr = new XMLHttpRequest();
   xhr.open('POST', '/submitPlaylist', true);
