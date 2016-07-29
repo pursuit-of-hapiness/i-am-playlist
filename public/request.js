@@ -3,7 +3,7 @@ const trackRows = document.getElementsByClassName('track');
 
 const addTrackToPlaylist = function() {
   this.childNodes[1].className = 'track-clicked';
-  this.childNodes[3].className = 'toggle';
+  this.childNodes[3].className = 'fadeIn';
 
   const xhr = new XMLHttpRequest();
   xhr.open('POST', '/submitPlaylist', true);
