@@ -40,5 +40,9 @@
     "request": "^2.74.0",
     "spotify-web-api-node": "^2.3.5",
     "vision": "^4.1.0"
+  },
+  "engines": {
+    "node": "6.2.2",
+    "npm": "3.9.5"
   }
 }
