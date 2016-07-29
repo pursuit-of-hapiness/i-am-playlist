@@ -4,17 +4,32 @@
 
 Discover Weekly is a playlist published to every user by Spotify that analyses your listening patterns to serve up content that they think you might like. The playlist gets refreshed every week so if you haven't saved the songs you are interested in into a new playlist, then you will lose them forever. My Discover Weekly logs you into your Spotify account, shows you your Discover Weekly recommendations and lets you easily save them into a new playlist which will appear in your account.
 
+## Quickstart guide
+
+In your terminal clone the repo, install the npm modules then start the server
+```bash
+git clone https://github.com/pursuit-of-hapiness/i-am-playlist.git && cd i-am-playlist
+npm install
+npm start
+```
+Then in your browser go to:
+```
+http://localhost:3000/
+```
+
 ## Workflow
+Phrases in capital letters are enpoints. See the endpoint docs below for more details.
 
 * User login with spotify to get access token
-* GET list of user's playlists
+* GET A LIST OF A USER'S PLAYLISTS
 * Look for a playlist with owner ID 'spotifydiscover' - take its playlist_id
-* Look for a playlist with name 'My Discover Weekly Picks' - take its playlist_id
-* GET the list of tracks using the spotifydiscover-playlist_id
+* GET A PLAYLIST’S TRACKS using the spotifydiscover-playlist_id
 * Strip the 'spotify track URIs' off the track objects and turn into an comma-separated string
+* GET A LIST OF A USER'S PLAYLISTS
+* Look for a playlist with name 'My Discover Weekly Picks' - take its playlist_id
 * Did the user have a playlist called 'My Discover Weekly Picks'?
-* If yes, POST create a playlist with name 'My Discover Weekly Picks'
-* Use the 'spotify track URIs' string to add these songs to the playlist called 'My Discover Weekly Picks'
+* If yes, CREATE A PLAYLIST with name 'My Discover Weekly Picks'
+* Use the 'spotify track URIs' string to ADD TRACKS TO A PLAYLIST called 'My Discover Weekly Picks'
 
 ## Endpoint docs
 
@@ -41,7 +56,7 @@ Authorization: Bearer {Access Token Here}
 
 #### Response
 
-JSON object return is an array of playlist objects. This is what the 'discover weekly' object for the user mcelearr (me) looks like for this week: 
+JSON object return is an array of playlist objects. This is what the 'discover weekly' object for the user mcelearr (me) looks like for this week:
 
 ```javascript
 {
@@ -78,7 +93,7 @@ JSON object return is an array of playlist objects. This is what the 'discover w
     "uri" : "spotify:user:spotifydiscover:playlist:4yyIpGk9RDnP4l4nDw5fZq"
   }
   ```
-  
+
 ### Get a Playlist’s Tracks
 
 |Get a Playlist’s Tracks||
@@ -173,7 +188,7 @@ What comes back is track objects in an array called items. Here is the first tra
     }
   }
   ```
-  
+
 ### Create a Playlist
 
 |Create a Playlist||
