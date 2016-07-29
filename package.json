@@ -2,10 +2,10 @@
   "name": "i-am-playlist",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "testserver": "nodemon tests/serverTest.js",
-    "start": "nodemon src/server.js"
+    "testserver": "node tests/serverTest.js",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -41,5 +41,9 @@
     "request": "^2.74.0",
     "spotify-web-api-node": "^2.3.5",
     "vision": "^4.1.0"
+  },
+  "engines": {
+    "node": "6.2.2",
+    "npm": "3.9.5"
   }
 }
