@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "testserver": "nodemon tests/serverTest.js",
+    "testserver": "node tests/serverTest.js",
     "start": "node server.js"
   },
   "repository": {
