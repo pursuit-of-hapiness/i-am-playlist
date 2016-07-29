@@ -5,6 +5,8 @@ require('env2')('config.env');
 const hapi = require('hapi');
 const Handlebars = require('handlebars');
 
+const port = process.env.PORT || 3000;
+
 const routes = [
   'index',
   'login',
@@ -16,7 +18,7 @@ const routes = [
 const routesArray = routes.map((el) => require(`./routes/${el}`));
 const server = new hapi.Server();
 
-server.connection({ port: 3000 });
+server.connection({ port: port });
 
 server.start((startErr) => {
   if (startErr) throw startErr;
