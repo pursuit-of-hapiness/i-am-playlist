@@ -17,7 +17,8 @@
   <tbody>
     {{#each tracks}}
     <tr class="track" id={{{trackId}}}>
-      <td class="small material-icons">album</td>
+      <td class="toggle"><i class="material-icons">favorite</i></td>
+      <td class="track-clicked"><i class="material-icons">done</i></td>
       <td>{{{trackName}}}</td>
       <td>{{{albumName}}}</td>
       <td>{{{artistNames}}}</td>

@@ -92,4 +92,10 @@ body {
 #login-button {
   background-color: #514B23; }
 
+.track-clicked {
+  display: none; }
+
+#display {
+  text-align: center; }
+
 /*# sourceMappingURL=main.css.map */
